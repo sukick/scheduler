@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "components/Application.scss";
 import DayList from "components/DayList";
+import Appointment from "components/Appointment";
 
 const days = [
   {
@@ -20,10 +21,58 @@ const days = [
   },
 ];
 
+const appointments = [
+  {
+    id: 1,
+    time: "12pm",
+  },
+  {
+    id: 2,
+    time: "1pm",
+    interview: {
+      student: "Lydia Miller-Jones",
+      interviewer: {
+        id: 1,
+        name: "Sylvia Palmer",
+        avatar: "https://i.imgur.com/LpaY82x.png",
+      }
+    }
+  },
+  {
+    id: 3,
+    time: "2pm",
+    interview: {
+      student: "Angela Chan",
+      interviewer: {
+        id: 2,
+        name: "Leo",
+        avatar: "https://i.imgur.com/T2WwVfS.png",
+      }
+    }
+  },
+  {
+    id: 4,
+    time: "3pm",
+    interview: {
+      student: "Andrew Ho",
+      interviewer: {
+        id: 3,
+        name: "Loki",
+        avatar: "https://i.imgur.com/FK8V841.jpg",
+      }
+    }
+  },
+];
+
 export default function Application(props) {
   const [day, setDay] = useState("Monday");
- 
-  
+
+  const schedule = appointments.map((appointment) => {
+    return (
+      <Appointment key={appointment.id} {...appointment} />
+    )
+  })
+
   return (
     <main className="layout">
       <section className="sidebar">
@@ -45,10 +94,10 @@ export default function Application(props) {
     src="images/lhl.png"
     alt="Lighthouse Labs"
   />
-        {/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
+        {schedule}
+        <Appointment key="last" time="5pm" />
       </section>
     </main>
     
