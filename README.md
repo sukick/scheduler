@@ -5,8 +5,8 @@ React application that allows users to make and cancel appointments.
 
 ## Screenshots 
 
-https://github.com/sukick/scheduler/blob/master/docs/AppointmentForm.png?raw=true
-https://github.com/sukick/scheduler/blob/master/docs/Delete.png?raw=true
+!["screenshot of Appointment Form"] (https://github.com/sukick/scheduler/blob/master/docs/AppointmentForm.png?raw=true)
+!["screenshot of Delete function"] (https://github.com/sukick/scheduler/blob/master/docs/Delete.png?raw=true)
 ## Setup
 
 Install dependencies with `npm install`.
