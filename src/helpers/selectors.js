@@ -1,4 +1,5 @@
 export function getAppointmentsForDay(state, day) {
+  // getAppointmentForDay will receive 2 arguments state and day then return an array for the given day
   let appointmentList = [];
 
   const dayObj = state.days.find(singleDay => singleDay.name === day)
@@ -29,6 +30,7 @@ export function getInterviewersForDay(state, day) {
 };
 
 export function getInterview(state, interview) {
+  // function will return a new object containing the interview data when we pass it an object that contains the interviewer
   if(!interview) {
     return null;
   }

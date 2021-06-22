@@ -3,6 +3,7 @@ import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
 export default function Form(props) {
+  // Form component track the current text input value and the currently selected interviewer
   
   const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
@@ -10,10 +11,13 @@ export default function Form(props) {
 
   function validate() {
     if (name === "") {
+      // if the input of student's name is empty, will show the following message
       setError("Student name cannot be blank");
       return;
     };
+
     setError("");
+    // When user clicks on the save button, pass the state to an onSave
     props.onSave(name, interviewer);
   };
 
@@ -21,6 +25,7 @@ export default function Form(props) {
     setName("");
     setInterviewer(null);
   };
+
   const cancel = () => {
     reset();
     props.onCancel();

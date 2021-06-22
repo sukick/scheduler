@@ -18,12 +18,14 @@ export default function Show(props) {
             className="appointment__actions-button"
             src="images/edit.png"
             alt="Edit"
+            // when triggered, will edit the appointment selected
             onClick={props.onEdit}
           />
           <img
             className="appointment__actions-button"
             src="images/trash.png"
             alt="Delete"
+            // when triggered, will delete the appointment selected
             onClick={props.onDelete}
           />
         </section>
